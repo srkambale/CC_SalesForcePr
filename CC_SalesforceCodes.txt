@@ -78,7 +78,32 @@ try {
     System.debug('Result: ' + result);
 } catch (Exception e) {
     System.debug('Error: ' + e.getMessage());
+	
 }
+
+
+
+OR::::::::
+
+
+
+public class DivisionClass {
+
+    // Method to divide two numbers
+    public static Decimal divideNumbers(Decimal a, Decimal b) {
+        if (b == 0) {
+            System.debug('Cannot divide by zero.');
+            return null; // or return 0 if you prefer
+        }
+        Decimal result = a / b;
+        return result;
+    }
+
+}
+
+run:
+Decimal result = DivisionClass.divideNumbers(20, 5);
+System.debug('The result is: ' + result);
 =======================================================================================================
 
 6.Creating an application in salesForce.com using Apex Programming Language .
@@ -145,4 +170,283 @@ try {
 } catch (Exception e) {
     System.debug('Error: ' + e.getMessage());
 }
+
+or::::
+
+public class CalculatorClass {
+
+    // Addition
+    public static Integer add(Integer a, Integer b) {
+        return a + b;
+    }
+
+    // Subtraction
+    public static Integer subtract(Integer a, Integer b) {
+        return a - b;
+    }
+
+    // Multiplication
+    public static Integer multiply(Integer a, Integer b) {
+        return a * b;
+    }
+
+    // Division (using Decimal for accuracy)
+    public static Decimal divide(Decimal a, Decimal b) {
+        if (b == 0) {
+            System.debug('Cannot divide by zero.');
+            return null;
+        }
+        return a / b;
+    }
+}
+
+run:
+Integer a = 20;
+Integer b = 5;
+
+System.debug('Addition: ' + CalculatorClass.add(a, b));
+System.debug('Subtraction: ' + CalculatorClass.subtract(a, b));
+System.debug('Multiplication: ' + CalculatorClass.multiply(a, b));
+System.debug('Division: ' + CalculatorClass.divide(Decimal.valueOf(a), Decimal.valueOf(b)));
 ==================================================================================================
+7. Creating an application in salesForce.com using Apex Programming Language
+Display Multiple of 5 (table of 5).
+
+public class TableOfFive {
+
+    // Method to display the table of 5
+    public static void printTableOfFive() {
+        Integer num = 5;
+        for (Integer i = 1; i <= 10; i++) {
+            Integer result = num * i;
+            System.debug(num + ' x ' + i + ' = ' + result);
+        }
+    }
+
+}
+
+
+run:
+TableOfFive.printTableOfFive();
+
+=============================================================================================
+8. Creating an application in salesForce.com using Apex Programming Language
+Display Multiple of 10 (table of 10).
+
+public class TableOfTen {
+    
+    public static void printTableOfTen() {
+        Integer num = 10;
+        for (Integer i = 1; i <= 10; i++) {
+            Integer result = num * i;
+            System.debug(num + ' x ' + i + ' = ' + result);
+        }
+    }
+
+}
+run:
+TableOfTen.printTableOfTen();
+
+==============================================================================================
+
+9.Creating an application in salesForce.com using Apex Programming Language
+.Print message “Welcome to Apex Programming Language of sale force Platform”.
+
+code:
+public class WelcomeClass {
+    public static void showMessage() {
+        System.debug('Welcome to Apex Programming Language of Salesforce Platform');
+    }
+}
+
+
+run:
+WelcomeClass.showMessage();
+=================================================================================================
+0.Design and develop custom Application using Sales force Cloud (Lightning
+Platform). 
+
+Absolutely, Gayatri! Here's a *very beginner-friendly, step-by-step guide* to design and develop a *custom application using Salesforce Lightning Platform. No steps will be skipped, and I’ll explain all important details for a **first-time learner*.
+
+---
+
+### 🌩 *WHAT IS SALESFORCE LIGHTNING PLATFORM?*
+
+Salesforce Lightning Platform is a *cloud-based PaaS (Platform as a Service)* where you can create custom apps *without writing much code* (though you can code if needed). Think of it as a *drag-and-drop app builder* with powerful features.
+
+---
+
+## 🎯 GOAL:
+
+You will create a *custom app* with a custom object (like a table), fields (columns), and a basic UI using Lightning App Builder.
+
+Let’s say we are building a *“Student Management App”*.
+
+---
+
+## ✅ STEP 1: Create a Salesforce Developer Account
+
+1. Go to: [https://developer.salesforce.com/signup](https://developer.salesforce.com/signup)
+2. Fill in your details.
+3. Use your *real email* — Salesforce will send login details.
+4. Check your email and click the link to verify.
+5. You'll be taken to the *Salesforce Lightning Experience* UI.
+
+---
+
+## ✅ STEP 2: Understand the Salesforce Environment
+
+After login:
+
+* *App Launcher* (grid icon at top-left): Used to switch between apps.
+* *Setup Gear Icon (⚙)* → *Setup*: Admin tools and customization.
+* *Object Manager*: Where you create/manage objects (like tables).
+* *Lightning App Builder*: Design UI without code.
+* *Developer Console*: Used to write Apex (code) if needed.
+
+---
+
+## ✅ STEP 3: Create a New App (Your Custom App)
+
+1. Click the *Gear Icon (⚙)* → *Setup*
+2. Search for: App Manager in the *Quick Find box* (left side)
+3. Click *App Manager*
+4. Click *“New Lightning App”* (top-right button)
+
+*Fill App Info:*
+
+* App Name: Student Management
+* Developer Name: auto-fills
+* Description: Manage student records easily
+* Click *Next*
+
+*Navigation Style:*
+
+* Choose: *Standard Navigation*
+* Click *Next*
+
+*Add Utility Items and Navigation Items (tabs):*
+
+* For now, skip utility items → click *Next*
+* Under Navigation Items → Click *Add Item*
+* Choose: Home, Chatter, and later your custom object (e.g. Students)
+* Click *Next, then **Save & Finish*
+
+---
+
+## ✅ STEP 4: Create a Custom Object (Like a Table)
+
+1. From *Setup, go to **Object Manager* (top tab)
+2. Click *“Create”* → *Custom Object*
+
+*Fill:*
+
+* Label: Student
+* Plural Label: Students
+* Object Name: Student
+* Check: ✅ “Launch New Custom Tab Wizard after saving this custom object”
+* Check: ✅ Allow Reports, Activities
+* Click *Save*
+
+*Custom Tab Wizard:*
+
+* Tab Style: Pick any icon (e.g., Book)
+* Click *Next, keep defaults, then **Save*
+
+---
+
+## ✅ STEP 5: Add Custom Fields to the Object
+
+Still in Object Manager → Under Student object:
+
+1. Go to *Fields & Relationships*
+2. Click *New*
+
+👉 Create these fields:
+
+| Field Type | Field Label   | Example Input                                                 |
+| ---------- | ------------- | ------------------------------------------------------------- |
+| Text       | Full Name     | Gayatri Gosavi                                                |
+| Email      | Email         | [gayatrigosavi03@gmail.com](mailto:gayatrigosavi03@gmail.com) |
+| Date       | Date of Birth | 15/03/2003                                                    |
+| Picklist   | Course        | BE, BCA, BSc                                                  |
+| Number     | Year          | 3                                                             |
+
+Repeat for each field:
+
+* Click *New*
+* Choose the type
+* Fill the label
+* Length or values as needed
+* Click *Next* → *Next* → *Save*
+
+---
+
+## ✅ STEP 6: Add Records to Your Object (Data Entry)
+
+1. Go to *App Launcher* (grid icon top-left)
+2. Search: Student Management → open your app
+3. Click on the Students tab
+4. Click *New*
+5. Fill the form (Name, Email, etc.) and click *Save*
+6. Add more records if you want
+
+---
+
+## ✅ STEP 7: Customize the Page Layout (Optional but Cool)
+
+1. In the Student record page → Click *Gear Icon* → *Edit Page*
+
+2. This opens the *Lightning App Builder*
+
+3. You can:
+
+   * Add/remove components (Related lists, Charts, Tabs)
+   * Drag things to rearrange
+
+4. Click *Save* → *Activate* → Assign as Org Default → Save
+
+---
+
+## ✅ STEP 8: Create Reports (Optional)
+
+1. Go to App Launcher → Reports
+2. Click *New Report*
+3. Select *Students* as the report type
+4. Choose fields to display (e.g., Name, Email)
+5. Click *Run* → *Save & Name your Report*
+
+---
+
+## ✅ STEP 9: Try Automation (Optional)
+
+You can create:
+
+* *Validation Rules*: Ensure Email is not blank.
+* *Workflows / Process Builder*: Send an email when a record is created.
+
+Let me know if you want a simple workflow or automation too.
+
+---
+
+## 🧠 Oral/Viva Questions You Might Get:
+
+1. *What is a custom object in Salesforce?*
+
+   * A custom object is like a custom table to store data specific to your application.
+
+2. *What is Lightning App Builder?*
+
+   * It is a drag-and-drop tool used to design page layouts in Salesforce Lightning Experience.
+
+3. *What’s the difference between a Standard and Custom Object?*
+
+   * Standard objects come with Salesforce (like Accounts), custom ones are created by users.
+
+4. *What is a Record in Salesforce?*
+
+   * A row of data in an object (like a student’s info).
+
+---
+
+Would you like a *diagram or flowchart* to visualize this process?
