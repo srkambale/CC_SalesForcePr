@@ -1,0 +1,148 @@
+2)Creating an application in salesForce.com using Apex Programming Language
+Perform Addition of Two numbers.
+
+code:
+
+public class AdditionExample {
+    
+    // Static method to perform addition
+    public static Integer addNumbers(Integer num1, Integer num2) {
+        return num1 + num2;
+    }
+}
+
+To run the code:
+Integer result = AdditionExample.addNumbers(10, 20);
+System.debug('Addition Result: ' + result);
+
+=====================================================================================
+3).Creating an application in salesForce.com using Apex Programming Language
+Perform substration of Two numbers.
+
+code:
+
+public class SubtractionExample {
+
+    // Static method to perform subtraction
+    public static Integer subtractNumbers(Integer num1, Integer num2) {
+        return num1 - num2;
+    }
+}
+
+To run the code:
+Integer result = SubtractionExample.subtractNumbers(20, 10);
+System.debug('Subtraction Result: ' + result);
+ 
+=========================================================================================
+4).Creating an application in salesForce.com using Apex Programming Language
+.Perform Multiplication of Two numbers. 
+
+code:
+public class MultiplicationExample {
+    
+    // Static method to perform multiplication
+    public static Integer multiplyNumbers(Integer num1, Integer num2) {
+        return num1 * num2;
+    }
+}
+
+
+to run:
+Integer result = MultiplicationExample.multiplyNumbers(5, 6);
+System.debug('Multiplication Result: ' + result);
+
+============================================================================================
+5.Creating an application in salesForce.com using Apex Programming Language
+.Perform Division of Two numbers.
+
+code:
+public class MyDivision {
+    
+    public static Decimal divideNumbers(Decimal num1, Decimal num2) {
+        if (num2 == 0.0) {
+            throw new DivisionByZeroException('Division by zero is not allowed.');
+        }
+        return num1 / num2;
+    }
+}
+
+new class:
+public class DivisionByZeroException extends Exception {
+    // You don't need to add anything here unless you want custom behavior
+}
+
+
+run:
+try {
+    Decimal result = MyDivision.divideNumbers(10.0, 0.0);
+    System.debug('Result: ' + result);
+} catch (Exception e) {
+    System.debug('Error: ' + e.getMessage());
+}
+=======================================================================================================
+
+6.Creating an application in salesForce.com using Apex Programming Language .
+Perform (add, Sub, multi, Div) of Two numbers.
+
+code:
+public class MyCalc {
+
+    public static Integer add(Integer a, Integer b) {
+        return a + b;
+    }
+
+    // Subtraction
+    public static Integer subtract(Integer a, Integer b) {
+        return a - b;
+    }
+
+    // Multiplication
+    public static Integer multiply(Integer a, Integer b) {
+        return a * b;
+    }
+
+    // Division (Decimal with error handling for division by zero)
+    public static Decimal divide(Decimal a, Decimal b) {
+        if (b == 0.0) {
+            throw new DivisionByZeroException('Cannot divide by zero.');
+        }
+        return a / b;
+    }
+}
+
+code:
+public class DivisionByZeroException extends Exception {
+    public DivisionByZeroException(String message) {
+        super(message);
+    }
+}
+
+run:
+try {
+    Integer a = 10;
+    Integer b = 5;
+
+    // Test Addition
+    Integer sum = MyCalc.add(a, b);
+    System.debug('Addition: ' + sum);
+
+    // Test Subtraction
+    Integer diff = MyCalc.subtract(a, b);
+    System.debug('Subtraction: ' + diff);
+
+    // Test Multiplication
+    Integer prod = MyCalc.multiply(a, b);
+    System.debug('Multiplication: ' + prod);
+
+    // Test Division
+    Decimal quot = MyCalc.divide(Decimal.valueOf(a), Decimal.valueOf(b));
+    System.debug('Division: ' + quot);
+
+    // Testing division by zero
+    Decimal errorQuot = MyCalc.divide(Decimal.valueOf(a), Decimal.valueOf(0));
+    System.debug('Division by zero: ' + errorQuot);
+    
+} catch (Exception e) {
+    System.debug('Error: ' + e.getMessage());
+}
+==================================================================================================
